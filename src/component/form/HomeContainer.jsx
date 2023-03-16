@@ -23,7 +23,7 @@ const MovieDetails = styled.div`
   display:flex;
   background-color :#263f61;
   justify-content:space-between;
-  
+  padding: 0px 6px;
   .anticon{
     color : #ff5e62
   }
