@@ -6,18 +6,18 @@ import { singleMovie } from "../../services/movies";
 
 const Movie = () => {
     const {id} = useParams();
-  const [movie, setSingleMovie] = useState({});
-  useEffect(() => {
+    const [movie, setSingleMovie] = useState({});
+    useEffect(() => {
         const fetchData = async () => {
         const res = await singleMovie(id);
         setSingleMovie(res);
         console.log(movie)
     };
-    fetchData();
-  }, [id]);
-  if (typeof is !=='undefined'){
-    fetchData();
+    if(id){
+      fetchData();
   }
+  }, [id]);
+  
   return (
     <>
       <Header />

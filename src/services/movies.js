@@ -12,7 +12,7 @@ export const getMovies = async () => {
   }
 };
 
-export const singleMovie = async () =>{
+export const singleMovie = async (id) =>{
   try{
     const url = `https://api.themoviedb.org/3/movie/${id}?api_key=fe17c67e56783c08fb10e1d624399ba7&language=en-US`;
     const res = await apiCaller("GET", url, null);
