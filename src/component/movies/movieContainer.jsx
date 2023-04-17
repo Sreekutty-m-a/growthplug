@@ -19,8 +19,9 @@ const DisplayMovie = styled.div`
     
 `
 const ImageContainer = styled.div`
-    width : 60%;
-`
+.img{
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 100%)
+}`
 
 const MovieContainer = (props) =>{
     const {movie} = props;
@@ -38,7 +39,7 @@ const MovieContainer = (props) =>{
         </DisplayMovie>
         <ImageContainer>
             <div>
-            <img src={imageURL + movie.poster_path} style={{width:750,height:520}} />
+            <img src={imageURL + movie.poster_path} style={{width:750,height:520}}/>
             </div>
         </ImageContainer>
         </MovieWrapper>

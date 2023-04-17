@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Header from "../common/header";
-import { getMovies } from "../../services/movies";
+
 import HomeContainer from "./HomeContainer";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchMovies } from "../../store/home/services";
 
 const Home = () => {
-  const [movies, setMovies] = useState({});
+  const movies = useSelector((state) => state.home.movies);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await getMovies();
-      setMovies(res);
-    };
-    fetchData();
+    if (!(movies && movies.results && movies.results.length > 0)) {
+      dispatch(fetchMovies());
+    }
   }, []);
   return (
     <>
